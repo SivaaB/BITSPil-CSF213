@@ -1,4 +1,4 @@
-public class Cubesquare
+public class Cubesquare_3
 { 
     public static void main (String args[])
     { 

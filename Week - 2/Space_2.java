@@ -1,6 +1,6 @@
 import java.util.*; 
 
-public class Space
+public class Space_2
 { 
     public static void main(String args[])
     { 

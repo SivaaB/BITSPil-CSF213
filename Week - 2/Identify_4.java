@@ -1,6 +1,6 @@
 import java.util.Scanner; 
 
-public class Identify
+public class Identify_4
 { 
     public static void main (String args[])
     { 
