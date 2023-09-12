@@ -30,9 +30,7 @@ void main() {
                 printf("The book with serial number %d is %s by %s \n", j+1, b[j].name, b[j].writer);
 
             }
-
             printf("\n");
-
         }
 
         //Add Books
@@ -173,3 +171,4 @@ void main() {
         
         }
     }
+}
