@@ -1,22 +1,18 @@
 import java.util.Scanner; 
 import java.util.Random; 
 
-public class GameLauncher 
+public class GameLauncher
 { 
     public static void main (String[] args)
     { 
         System.out.println ("Guessing Games - Guess a Number between 0 to 9!"); 
 
         GuessGame game = new GuessGame();
-        Player p = new Player(); 
+        game.startGame(); 
 
         Player p1 = new Player(); 
         Player p2 = new Player(); 
         Player p3 = new Player(); 
-
-        game.startGame(); 
-        p.guess(); 
-
     }
 }
 
@@ -36,28 +32,32 @@ class GuessGame
         int p2 = scanner.nextInt(); 
         System.out.println ("User-3: "); 
         int p3 = scanner.nextInt(); 
+
+        int number = Player.guess(); 
+        System.out.println ("The random number is: " + number); 
+        
+        System.out.println ("Winners are: "); 
+        if (number == p1)
+        { 
+            System.out.println ("Winner-1"); 
+        }
+        if (number == p2)
+        { 
+            System.out.println ("Winnner-2"); 
+        }
+        if (number == p3)
+        { 
+            System.out.println ("Winnner-3"); 
+        }
     }
 } 
 
 class Player
 { 
-    public static void guess ()
+    public static int guess ()
     { 
         Random random = new Random(); 
         int number = random.nextInt(10); 
-    
-        System.out.println ("Winners are: "); 
-        if (number == GuessGame.p1)
-        { 
-            System.out.println ("Winner-1"); 
-        }
-        if (number == GuessGame.p2)
-        { 
-            System.out.println ("Winnner-2"); 
-        }
-        if (number == GuessGame.p3)
-        { 
-            System.out.println ("Winnner-3"); 
-        }
+        return number; 
     }
 }
