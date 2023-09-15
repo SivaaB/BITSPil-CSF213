@@ -19,7 +19,6 @@ public class Main
             prev = current; 
             current = next; 
         }
-
         System.out.println ("The nth term is: " + current); 
     }
 }
