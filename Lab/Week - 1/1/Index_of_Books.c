@@ -13,7 +13,7 @@ struct Books {
 
 void main() {
     int count=0;
-    int turi_ip_ip_ip=0;
+    int turi_ip_ip_ip;
     struct Books b[50];
 
     while(1) {
@@ -23,7 +23,6 @@ void main() {
         printf("Please enter the desired option: ");
         scanf("%d", &turi_ip_ip_ip);
 
-        //View Books
         if(turi_ip_ip_ip==1) {
             for (int j=0; j<count; j++) {
                 printf("\n");
@@ -33,7 +32,6 @@ void main() {
             printf("\n");
         }
 
-        //Add Books
         else if(turi_ip_ip_ip==2) {
 
             printf("\nThe Serial Number of this book is %d\n", count+1);
@@ -59,7 +57,6 @@ void main() {
 
         }
 
-        //Search Books
         else if(turi_ip_ip_ip==3) {
             int index=1;
     
@@ -95,7 +92,6 @@ void main() {
 
         }
 
-        //Edit Books
         else if(turi_ip_ip_ip==4) {
             int index=1;
 
@@ -132,7 +128,6 @@ void main() {
 
         }
 
-        //Delete Books
         else if(turi_ip_ip_ip==5) {
             int index=0;
             
@@ -160,12 +155,10 @@ void main() {
             }
 
         }
-        //Exit
         else if(turi_ip_ip_ip==6) {
             break;
 
         } 
-        //Error
         else {
             printf("\nPlease enter a valid option\n");
         
