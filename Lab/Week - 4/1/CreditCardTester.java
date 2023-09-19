@@ -4,11 +4,12 @@ class CreditCard
 { 
     Scanner sc = new Scanner(System.in); 
 
-    String n, cn; 
-    boolean en; 
-    int p; 
-    String em; 
-    int ct, cuc, cl; 
+    private String n, cn; 
+    private boolean en; 
+    private int p; 
+    private String em; 
+    private int ct, cuc;
+    int cl; 
 
     public CreditCard (String name, String cardNo, boolean enabled, int pin, String expiryMonth, int cardType, int currentCredit, int creditLimit)
     {
@@ -54,9 +55,27 @@ class CreditCard
             { 
                 if (cl > transact_amt)
                 {
-                    System.out.println ("Amount Before Transaction : " + cuc); 
-                    cuc = cuc - transact_amt; 
-                    System.out.println ("Amount After Transaction : " + cuc); 
+                    if (ct == 1)
+                    { 
+                        System.out.println ("Amount Before Transaction : " + cuc); 
+                        cuc = cuc - (int)(transact_amt*0.99); 
+                        System.out.println ("Amount After Transaction : " + cuc); 
+                    }
+
+                    if (ct == 2)
+                    { 
+                        System.out.println ("Amount Before Transaction : " + cuc); 
+                        cuc = cuc - (int)(transact_amt*0.98); 
+                        System.out.println ("Amount After Transaction : " + cuc); 
+                    }
+
+                    if (ct == 3)
+                    { 
+                        System.out.println ("Amount Before Transaction : " + cuc); 
+                        cuc = cuc - (int)(transact_amt*0.97); 
+                        System.out.println ("Amount After Transaction : " + cuc); 
+                    }
+                    
                 }
                 else
                 { 
