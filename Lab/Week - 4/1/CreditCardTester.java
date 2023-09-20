@@ -23,7 +23,6 @@ class CreditCard
         cl = creditLimit; 
     }
 
-    // Display Function
     void display() 
     { 
         System.out.println ("*******************"); 
