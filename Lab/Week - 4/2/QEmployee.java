@@ -16,7 +16,7 @@ class Employee
         this.basic = basic;
     }
 
-    void calculateSalary()
+    public void calculateSalary()
     {
         if (dept == 1)
         {
@@ -26,7 +26,7 @@ class Employee
         {
             allowance = 2500;
         }
-        else
+        else if (dept == 3)
         {
             allowance = 3500;
         }
@@ -35,7 +35,7 @@ class Employee
 
     }
 
-    void displayDetails()
+    public void displayDetails()
     {
         System.out.println ("**************");
         System.out.println (id);
