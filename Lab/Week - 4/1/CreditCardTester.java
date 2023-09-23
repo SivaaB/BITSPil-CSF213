@@ -23,27 +23,27 @@ class CreditCard
         cl = creditLimit;
     }
 
-    void display()
+    public void display()
     {
         System.out.println ("*******************");
         System.out.println (n);
         System.out.println (cn);
         System.out.println (en);
-        System.out.println (p);
+        // System.out.println (p); // ... do NOT display the PIN
         System.out.println (em);
         System.out.println (ct);
         System.out.println (cuc);
         System.out.println (cl);
     }
 
-    void changePin(int newPin)
+    public void changePin(int newPin)
     {
         System.out.println ("Old Pin was: " + p);
         p = newPin;
         System.out.println ("New Pin is:  " + p);
     }
 
-    void transact(int transact_amt)
+    public void transact(int transact_amt)
     {
         if (en)
         {
@@ -52,28 +52,29 @@ class CreditCard
 
             if (p == pin_check)
             {
-                if (cl > transact_amt)
+                if (transact_amt <= cl)
                 {
+                    System.out.println ("Amount Before Transaction : " + cuc);
                     if (ct == 1)
                     {
-                        System.out.println ("Amount Before Transaction : " + cuc);
-                        cuc = cuc - (int)(transact_amt*0.99);
-                        System.out.println ("Amount After Transaction : " + cuc);
+                        cuc -= (int)(transact_amt*0.99);
                     }
 
-                    if (ct == 2)
+                    else if (ct == 2)
                     {
-                        System.out.println ("Amount Before Transaction : " + cuc);
-                        cuc = cuc - (int)(transact_amt*0.98);
-                        System.out.println ("Amount After Transaction : " + cuc);
+                        cuc -= (int)(transact_amt*0.98);
                     }
 
-                    if (ct == 3)
+                    else if (ct == 3)
                     {
-                        System.out.println ("Amount Before Transaction : " + cuc);
-                        cuc = cuc - (int)(transact_amt*0.97);
-                        System.out.println ("Amount After Transaction : " + cuc);
+                        cuc -= (int)(transact_amt*0.97);
                     }
+
+                    else
+                    {
+                        cuc -= transact_amt;
+                    }
+                    System.out.println ("Amount After Transaction : " + cuc);
 
                 }
                 else
@@ -94,7 +95,7 @@ class CreditCard
         }
     }
 
-    void changeCardStatus(boolean status)
+    public void changeCardStatus(boolean status)
     {
         System.out.println ("Status Before: " + en);
         en = status;
@@ -117,8 +118,8 @@ public class CreditCardTester
         boolean enabled = scanner.nextBoolean();
         System.out.println ("Enter Pin: ");
         int pin = scanner.nextInt();
+        scanner.nextLine(); // To consume the newline after nextInt
         System.out.println ("Expiry Month: ");
-        scanner.nextLine();
         String expiryMonth = scanner.nextLine();
         System.out.println ("Card Type: ");
         int cardType = scanner.nextInt();
