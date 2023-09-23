@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main
+public class Q02_LowerCase
 {
     public static void main (String[] args)
     {

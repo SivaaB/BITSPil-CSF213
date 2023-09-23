@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main
+public class Q01_PrimeNum
 {
     public static void main (String[] args)
     {
@@ -22,23 +22,23 @@ public class Main
 
     public static boolean isPrime(int i)
     {
+        if (i == 2 || i == 3)
+        {
+            return true;
+        }
+
         for (int j = 2; j <= i/2; j++)
         {
-            if (i == 2 || i == 3)
-            {
-                return true;
-            }
-
-            else if (i % j == 0)
+            if (i % j == 0)
             {
                 return false;
             }
 
-            else
-            {
-                return true;
-            }
+            // else
+            // {
+            //     return true;
+            // }
         }
-        return false;
+        return true;
     }
 }

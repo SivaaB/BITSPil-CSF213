@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main
+public class Q03_GCD
 {
     public static void main (String[] args)
     {
@@ -11,8 +11,6 @@ public class Main
         System.out.println ("Enter Number-2: ");
         int n2 = scanner.nextInt();
 
-        int lcm = n1 * n2;
-
         while (n2 != 0)
         {
             int temp = n2;
@@ -20,7 +18,6 @@ public class Main
             n1 = temp;
         }
 
-        lcm = lcm/n1;
-        System.out.println ("The LCM is " + lcm);
+        System.out.println ("The GCD is: " + n1);
     }
 }
