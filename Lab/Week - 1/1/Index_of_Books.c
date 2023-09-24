@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#define MAX_BOOKS 1
+#define MAX_BOOKS 50
 
 struct Books {
     char name[100];
