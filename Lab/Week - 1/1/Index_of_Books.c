@@ -12,7 +12,6 @@ struct Books {
 
 };
 
-
 void main() {
     int count=0;
     int menu_choice;
