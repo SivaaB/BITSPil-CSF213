@@ -29,7 +29,6 @@ class CreditCard
         System.out.println (n);
         System.out.println (cn);
         System.out.println (en);
-        // System.out.println (p); // ... do NOT display the PIN
         System.out.println (em);
         System.out.println (ct);
         System.out.println (cuc);
