@@ -1,35 +1,35 @@
-import java.util.Scanner; 
+import java.util.Scanner;
 
-class SavingsAccount 
+class SavingsAccount
 {
     private static double annualInterestRate;
     private double savingsBalance;
 
-    public SavingsAccount(double savingsBalance) 
+    public SavingsAccount(double savingsBalance)
     {
         this.savingsBalance = savingsBalance;
     }
 
-    public void calculateMonthlyInterest() 
+    public void calculateMonthlyInterest()
     {
         double monthlyInterest = (savingsBalance * annualInterestRate) / 12;
         savingsBalance += monthlyInterest;
     }
 
-    public static void modifyInterestRate(double newInterestRate) 
+    public static void modifyInterestRate(double newInterestRate)
     {
         annualInterestRate = newInterestRate;
     }
 
-    public double getSavingsBalance() 
+    public double getSavingsBalance()
     {
         return savingsBalance;
     }
 }
 
-public class TestSavingsAccount 
+public class TestSavingsAccount
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
 
@@ -48,7 +48,7 @@ public class TestSavingsAccount
         SavingsAccount.modifyInterestRate(0.04);
 
         System.out.println("Month 1:");
-        for (int i = 0; i < accounts.length; i++) 
+        for (int i = 0; i < accounts.length; i++)
         {
             accounts[i].calculateMonthlyInterest();
             System.out.println("Account - " + (i + 1) + " Balance: " + accounts[i].getSavingsBalance());
@@ -57,7 +57,7 @@ public class TestSavingsAccount
         SavingsAccount.modifyInterestRate(0.05);
 
         System.out.println("\nMonth 2:");
-        for (int i = 0; i < accounts.length; i++) 
+        for (int i = 0; i < accounts.length; i++)
         {
             accounts[i].calculateMonthlyInterest();
             System.out.println("Account " + (i + 1) + " Balance: " + accounts[i].getSavingsBalance());
