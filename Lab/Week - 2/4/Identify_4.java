@@ -17,19 +17,16 @@ public class Identify_4
 
             if (check > 0)
             {
-                // System.out.println (check + " - Positive");
                 positiveCount++;
             }
 
             else if (check < 0)
             {
-                // System.out.println (check + " - Negative");
                 negativeCount++;
             }
 
             else
             {
-                // System.out.println (check + " - Zero");
                 zeroCount++;
             }
         }

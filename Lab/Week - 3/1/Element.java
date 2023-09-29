@@ -33,7 +33,7 @@ public class Element
 
         System.out.println ("Atomic Number: ");
         int atomic_number = scanner.nextInt();
-        scanner.nextLine(); // to consume the empty line!
+        scanner.nextLine();
         System.out.println ("Element Name: ");
         String element_name = scanner.nextLine();
         System.out.println ("Element Symbol: ");

@@ -117,7 +117,7 @@ public class CreditCardTester
         boolean enabled = scanner.nextBoolean();
         System.out.println ("Enter Pin: ");
         int pin = scanner.nextInt();
-        scanner.nextLine(); // To consume the newline after nextInt
+        scanner.nextLine();
         System.out.println ("Expiry Month: ");
         String expiryMonth = scanner.nextLine();
         System.out.println ("Card Type: ");

@@ -33,11 +33,6 @@ public class Q01_PrimeNum
             {
                 return false;
             }
-
-            // else
-            // {
-            //     return true;
-            // }
         }
         return true;
     }
