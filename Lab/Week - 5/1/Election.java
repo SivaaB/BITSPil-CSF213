@@ -4,9 +4,9 @@ class Vote
 {
     int countc1, countc2, countc3, countc4, countc5, count_spoilt = 0;
 
-    public void count (int votes[], int voters)
+    public void count (int votes[])
         {
-            for (int i = 0; i < voters; i++)
+            for (int i = 0; i < votes.length; i++)
             {
                 if (votes[i] == 1) {countc1++;}
                 else if (votes[i] == 2) {countc2++;}
@@ -39,7 +39,7 @@ public class Election
 
         int[] votes = new int[voters];
 
-        for (int i = 0; i < voters; i++)
+        for (int i = 0; i < votes.length; i++)
         {
             System.out.println ("Pick between 1-5 Candidate!");
             int vote = scanner.nextInt();
@@ -47,7 +47,7 @@ public class Election
         }
 
         Vote sivaa = new Vote();
-        sivaa.count (votes, voters);
+        sivaa.count (votes);
         sivaa.display();
     }
 }
