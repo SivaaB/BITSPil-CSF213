@@ -1,6 +1,3 @@
-// Code by arcenter
-// https://github.com/arcenter/UniCode/
-
 import java.util.Scanner;
 
 class Purse {
