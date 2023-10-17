@@ -68,6 +68,7 @@ public class Q1 {
             sivaa[i].calc_total();
             sivaa[i].calc_grand_total();
         }
+        scanner.close();
         displayHighest(sivaa);
     }
 }
