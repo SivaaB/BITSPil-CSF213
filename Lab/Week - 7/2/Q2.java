@@ -1,84 +1,108 @@
-import java.util.*; 
+import java.util.*;
 
-public class Q2
-{ 
-    public int[] dupli_finder(int[] og_array, int n)
-    {
-        int[] dupli_array = new int[n]; 
-        
-        for (int i = 0; i < n; i++)
-        { 
-            int count = 0; 
-            int dupli_element = og_array[i]; 
-            for (int j = i+1; j < n; j++)
-            { 
-                if (og_array[i] == og_array[j])
-                { 
-                    count++; 
-                }
+class DuplicateChecker {
+    private int[] arr;
+    private int[] arrDupe; // array with duplicated elements
+    private int[] arrCount; // array with num of duplicates
 
-                if (count >= 2)
-                {
-                    dupli_array[j] = dupli_element; 
-                }
+    public DuplicateChecker(int[] arr) {
+        this.arr = arr;
+
+    }
+
+    public void duplicates() {
+
+        arrDupe = new int[arr.length];
+        boolean[] flag = new boolean[arr.length];
+        int dupeCount = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (flag[i]) {
+                continue;
+
             }
-        }
-        return dupli_array; 
-    }
+            boolean dupesExist = false;
 
-    public int[] dupli_finder_counter(int[] og_array, int n)
-    {
-        int[] dupli_array_count = new int[n]; 
-        
-        for (int i = 0; i < n; i++)
-        { 
-            int count = 0; 
-            int dupli_element = og_array[i]; 
-            for (int j = i+1; j < n; j++)
-            { 
-                if (og_array[i] == og_array[j])
-                { 
-                    count++; 
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    dupesExist = true;
+                    flag[j] = true;
+
                 }
 
-                if (count > 1)
-                {
-                    dupli_array_count[j] = count + 1; 
-                }
             }
+            if (dupesExist) {
+                arrDupe[dupeCount++] = arr[i];
+
+            }
+
         }
-        return dupli_array_count; 
-    }
+        arrDupe = Arrays.copyOfRange(arrDupe, 0, dupeCount);
 
-    public static void main (String[] args)
-    { 
-        Scanner scanner = new Scanner(System.in);
+        arrCount = new int[arrDupe.length];
 
-        System.out.println ("Number of Elements in Array: "); 
-        int n = scanner.nextInt(); 
-        int[] og_array = new int[n]; 
-        for (int i = 0; i < n; i++)
-        { 
-            System.out.println ("Enter " + (i+1) + "th element: "); 
-            int element = scanner.nextInt(); 
-            scanner.nextLine();
-            og_array[i] = element;
-        }
+        for (int i = 0; i < arrDupe.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arrDupe[i] == arr[j]) {
+                    arrCount[i]++;
 
-        Q2 sivaa = new Q2(); 
-
-        int[] dupli_finder_array = new int[n]; 
-        dupli_finder_array = sivaa.dupli_finder(og_array, n); 
-        int[] dupli_finder_array_counter = new int[n]; 
-        dupli_finder_array_counter = sivaa.dupli_finder_counter(og_array, n);
-
-        System.out.println("The duplicate elements and their counts are: ");
-        for (int j = 0; j < dupli_finder_array.length; j++) 
-        {
-            if (dupli_finder_array[j] != 0) 
-                {
-                    System.out.println("The element " + dupli_finder_array[j] + " appears " + dupli_finder_array_counter[j] + " time(s)!");
                 }
+
+            }
+
         }
+
     }
+
+    public int[] getArrCount() {
+        return arrCount;
+
+    }
+
+    public int[] getArrDupe() {
+        return arrDupe;
+
+    }
+
+}
+
+public class Q2_ArrayElements {
+
+    public static void display(int[] arrDupe, int[] arrCount) {
+
+        System.out.println("\nThe Duplicate Elements are: ");
+
+        for (int i = 0; i < arrDupe.length; i++) {
+            System.out.println("The Element " + "'" + arrDupe[i] + "'" + " has " + arrCount[i] + " Duplicates");
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+        @SuppressWarnings("resource") // to ignore the resource leak warning
+
+        Scanner joe = new Scanner(System.in);
+
+        System.out.print("Please enter the number of elements: ");
+        int lim = joe.nextInt();
+
+        int[] arr = new int[lim];
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Please enter Number " + (i + 1) + ": ");
+            arr[i] = joe.nextInt();
+
+        }
+        DuplicateChecker check = new DuplicateChecker(arr);
+
+        check.duplicates();
+
+        int[] arrDupe = check.getArrDupe();
+        int[] arrCount = check.getArrCount();
+
+        display(arrDupe, arrCount);
+
+    }
+
 }
