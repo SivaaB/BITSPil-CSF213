@@ -1,75 +1,86 @@
 import java.util.*;
 
-abstract class Member {
-
+abstract class Member 
+{
     private String name;
     private String address;
 
-    Member(String name, String address) {
+    Member(String name, String address) 
+    {
         this.name = name;
         this.address = address;
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
     
-    public String getAddress() {
+    public String getAddress() 
+    {
         return address;
     }
 
     abstract public int getFee();
-
 }
 
-class StandardMember extends Member {
+class StandardMember extends Member 
+{
 
-    StandardMember(String name, String address) {
+    StandardMember(String name, String address) 
+    {
         super(name, address);
     }
 
-    @Override
-    public int getFee() {return 0;}
-
+    public int getFee() 
+    {
+        return 0;
+    }
 }
 
-class SeniorMember extends Member {
-
+class SeniorMember extends Member 
+{
     private int fee;
 
-    SeniorMember(String name, String address, int fee) {
+    SeniorMember(String name, String address, int fee) 
+    {
         super(name, address);
         this.fee = fee;
     }
 
-    @Override
-    public int getFee() {
+    public int getFee() 
+    {
         return fee;
     }
 
 }
 
-class Society {
-
+class Society 
+{
     private String name;
 
     ArrayList<Member> members = new ArrayList<Member>();
 
-    Society(String name) {
+    Society(String name) 
+    {
         this.name = name;
     }
 
-    public void addMember(String name, String address) {
+    public void addMember(String name, String address) 
+    {
         members.add(new StandardMember(name, address));
     }
     
-    public void addSeniorMember(String name, String address, int fee) {
+    public void addSeniorMember(String name, String address, int fee) 
+    {
         members.add(new SeniorMember(name, address, fee));
     }
 
-    public int getFeeTotal() {
+    public int getFeeTotal() 
+    {
         int totalFee = 0;
-        for (Member member : members) {
+        for (Member member : members) 
+        {
             totalFee += member.getFee();
         }
         return totalFee;
@@ -77,9 +88,10 @@ class Society {
 
 }
 
-public class Q1 {
-    public static void main(String args[]) {
-
+public class Q1 
+{
+    public static void main(String args[]) 
+    {
         Society society = new Society("Soc1");
 
         society.addMember("Aname", "Aadd");
