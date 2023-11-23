@@ -38,11 +38,11 @@ class BookComparator implements Comparator<Book>
 
 class GeneralizedSearch 
 {
-    public static boolean search(Object[] arr, Object item) 
+    public static boolean search(ArrayList<Book> arr, Book item) 
     {
-         for (Object element : arr) 
+         for (Book element : arr) 
          {
-            if (element.equals(item)) 
+            if (element.getName().equals(item.getName())) 
             {
                 return true;
             }
@@ -62,7 +62,7 @@ public class Q2
         books.add(new Book("Book C", 3));
 
         Book book = new Book("Book A", 10);
-        if(GeneralizedSearch.search(books.toArray(), book))
+        if(GeneralizedSearch.search(books, book))
         {
             System.out.println(book.toString());
         }
