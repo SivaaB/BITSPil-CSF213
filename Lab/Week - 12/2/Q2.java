@@ -33,7 +33,6 @@ class BookComparator implements Comparator<Book>
     {
         return Double.compare(book1.getCost(), book2.getCost());
     }
-
 }
 
 class GeneralizedSearch 
@@ -50,7 +49,6 @@ class GeneralizedSearch
         return false;
     }
 }
-
 
 public class Q2
 {
