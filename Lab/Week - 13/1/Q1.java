@@ -1,8 +1,8 @@
-class CustomException extends Exception 
+class CustomExceptionDev extends Exception 
 {
-    public CustomException() 
+    public CustomExceptionDev() 
     {
-        super("Cannot find prime for negative range");
+        super("Cannot find prime for negative range!");
     }
 }
 
@@ -24,11 +24,11 @@ class Prime
         return true;
     }
 
-    Prime(int lower, int upper) throws CustomException 
+    Prime(int lower, int upper) throws CustomExceptionDev
     {
         if (lower < 0 || upper < 0) 
         {
-            throw new CustomException();
+            throw new CustomExceptionDev();
         }
         for (int i = lower+1; i < upper; i++) 
         {
@@ -39,12 +39,11 @@ class Prime
         }   
         System.out.println();
     }
-
 }
 
 public class Q1 
 {
-    public static void main(String args[]) throws CustomException 
+    public static void main(String args[]) throws CustomExceptionDev
     {
         Prime prime1 = new Prime(20, 50);
         Prime prime2 = new Prime(-20, 50);

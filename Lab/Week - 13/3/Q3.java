@@ -11,7 +11,7 @@ class SumThread extends Thread
     {
         this.numbers = numbers;
         this.start = start;
-        this.end = end;
+        this.end = end; 
         this.partialSum = 0;
     }
 
@@ -53,16 +53,9 @@ public class Q3
         {
             int start = i * numbersPerThread;
             int end;
-            if (i == n - 1) 
-            {
-                end = num - 1;
-            } 
-            else 
-            {
                 end = start + numbersPerThread - 1;
-            }
             threads[i] = new SumThread(numbers, start, end);
-            threads[i].start();
+            threads[i].run();
         }
 
         try 
@@ -82,7 +75,6 @@ public class Q3
         {
             finalSum += thread.getPartialSum();
         }
-
         System.out.println("Final sum: " + finalSum);
     }
 }

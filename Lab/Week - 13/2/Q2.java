@@ -30,7 +30,7 @@ class InvalidIDException extends Exception
     }
 }
 
-class Student 
+class Student
 {
     private String name;
     private int age;
@@ -70,9 +70,8 @@ class Student
         this.year = year;
 
         if (id.length() != 6) throw new InvalidIDException(id);
-        else if (id.charAt(0) != 'f' || id.charAt(5) != 'U' || checkID(id)) throw new InvalidIDException(id);
+        else if (id.charAt(0) != 'f' && id.charAt(5) != 'U' && checkID(id)) throw new InvalidIDException(id);
         this.id = id;
-
     }
 }
 
@@ -93,6 +92,5 @@ public class Q2
 
         try {new Student("EPerson", 34, 2, "f15a3U");}
         catch (Exception e) {System.out.println("Exception : " + e);}
-
     }
 }
