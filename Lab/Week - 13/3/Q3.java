@@ -1,11 +1,11 @@
-import java.util.Scanner;
+import java.util.*;
 
 class SumThread extends Thread 
 {
     private int[] numbers;
     private int start;
     private int end;
-    private long partialSum;
+    private long partialSum; 
 
     public SumThread(int[] numbers, int start, int end) 
     {
@@ -49,6 +49,7 @@ public class Q3
         int numbersPerThread = num / n;
 
         SumThread[] threads = new SumThread[n];
+        
         for (int i = 0; i < n; i++) 
         {
             int start = i * numbersPerThread;
